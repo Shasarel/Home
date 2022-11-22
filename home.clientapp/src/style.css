@@ -1,6 +1,7 @@
-﻿html, body {
-    height: 100%;
-    width: 100%;
+﻿html, body, #root {
+    min-height: 100% !important; 
+    height:100% !important;
+    width: 100% !important;
 }
 
 a {
@@ -27,7 +28,7 @@ body {
     height: 100%;
 }
 
-#main-wrapper {
+#layout {
     width: 100%;
     min-height: 100%;
     display: flex;
@@ -37,17 +38,6 @@ body {
     align-items: stretch;
     flex-wrap: nowrap;
     background: #e0e0e0;
-}
-
-#root {
-    width: 100%;
-    min-height: 100%;
-    min-width: 320px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: stretch;
-    flex-wrap: nowrap;
 }
 
 #page-wrapper {
@@ -123,7 +113,7 @@ body {
 
 #navbar {
     width: 100%;
-    height: calc(100% - 64px);
+    height: calc(100% - 94px);
     margin: 0;
     padding: 0;
 }
@@ -141,7 +131,7 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
-    width: 100%;
+    width: calc(100%-40px);
     padding: 20px;
 }
 
@@ -566,9 +556,12 @@ body {
 
 .card-peity-fieldset {
     border: #3E5569 1px solid;
-    padding: 0;
+    padding:0 10px 10px 10px;
     box-shadow: darkgray 1px 1px 5px;
     margin-bottom: 20px;
+    display:flex;
+    flex-wrap:wrap;
+    max-width:726px;
 }
 
 .card-peity-legend {
@@ -777,7 +770,7 @@ div.loader {
 
 .topbar-button {
     background: #1F262D;
-    line-height: 34px;
+    line-height: 25px;
     vertical-align: middle;
     text-align: center;
     padding-right: 15px;
@@ -790,6 +783,8 @@ div.loader {
     align-items: initial;
     width: initial;
     margin-left: 15px;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 
@@ -839,17 +834,7 @@ div.loader {
 }
 
 @media(max-width: 1150px) {
-    .section {
-        width: 515px;
-    }
 
-    div.loader > div {
-        width: 5vw;
-        height: 5vw;
-    }
-}
-
-@media(max-width: 900px) {
     #sidebar {
         width: 75px;
     }
@@ -876,6 +861,16 @@ div.loader {
     }
 }
 
+@media(max-width: 900px) {
+    .section {
+        width: 515px;
+    }
+
+    .card-peity-fieldset {
+        max-width:484px;
+    }
+}
+
 @media(max-width: 670px) {
     .card-peity {
         margin: 10px 0;
@@ -883,10 +878,6 @@ div.loader {
 
     .section {
         width: 220px;
-    }
-
-    .card-peity-fieldset {
-        padding: 0 15px !important;
     }
 
     .card-peity-row {
@@ -916,7 +907,6 @@ div.loader {
     }
 
     #topbar {
-        height: auto;
         flex-direction: column-reverse;
         justify-content: right;
         align-items: flex-end;
@@ -932,5 +922,13 @@ div.loader {
 
     .card-peity-legend {
         margin-left: 15px;
+    }
+
+    .card-peity-fieldset {
+        flex-direction: column;
+    }
+
+    .card-peity-fieldset {
+        padding: 0 15px !important;
     }
 }

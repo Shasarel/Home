@@ -11,7 +11,7 @@ root.render(
   <React.StrictMode>
         <BrowserRouter basename={baseUrl}>
             <App />
-        </BrowserRouter>);
+        </BrowserRouter>
   </React.StrictMode>
 );
 

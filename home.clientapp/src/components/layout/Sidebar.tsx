@@ -1,4 +1,4 @@
-﻿import { SidebarItem } from "./SidebarItem";
+﻿import { SidebarButton } from "./SidebarButton";
 
 export const Sidebar = () => {
     return (
@@ -12,10 +12,10 @@ export const Sidebar = () => {
                     </span>
                 </a>
                 <nav id="navbar">
-                    <SidebarItem name="Strona główna" iconName="fas fa-th-large" route="/"></SidebarItem>
-                    <SidebarItem name="Energia" iconName="fas fa-bolt" route="energy"></SidebarItem>
-                    <SidebarItem name="Rolety" iconName="far fa-window-maximize" route="meteo"></SidebarItem>
-                    <SidebarItem name="Stacja meteo" iconName="fas fa-temperature-low" route="blinds"></SidebarItem>
+                    <SidebarButton name="Strona główna" iconName="fas fa-th-large" route="/"></SidebarButton>
+                    <SidebarButton name="Energia" iconName="fas fa-bolt" route="energy"></SidebarButton>
+                    <SidebarButton name="Rolety" iconName="far fa-window-maximize" route="meteo"></SidebarButton>
+                    <SidebarButton name="Stacja meteo" iconName="fas fa-temperature-low" route="blinds"></SidebarButton>
                 </nav>
             </div>
     );

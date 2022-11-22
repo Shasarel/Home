@@ -1,12 +1,12 @@
 ﻿import { Icon } from "./Icon";
 
-interface SidebarItemProps {
+interface SidebarButtonProps {
     name: string,
     iconName: string,
     route: string
 }
 
-export const SidebarItem = ({ name, iconName, route }: SidebarItemProps) => {
+export const SidebarButton = ({ name, iconName, route }: SidebarButtonProps) => {
     return (
         <a href={route} className="navbar-link">
             <Icon iconName={iconName}></Icon>
