@@ -6,28 +6,21 @@ namespace Home.WebApi.Controllers
     [Route("[controller]")]
     public class Energy : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
 
         private readonly ILogger<Energy> _logger;
+        private readonly HomeContext _context;
 
-        public Energy(ILogger<Energy> logger)
+        public Energy(ILogger<Energy> logger, HomeContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public int Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var a = _context.ElectricityMeasurement.Where(x => x.PowerProduction > 3500).ToList();
+            return 1;
         }
     }
 }

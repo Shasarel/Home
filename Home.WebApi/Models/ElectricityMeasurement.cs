@@ -1,0 +1,61 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Home.WebApi.Models
+{
+    [Table("energy")]
+    public class ElectricityMeasurement
+    {
+        [Key]
+        [Column("id")]
+        public int Id { get; set; }
+
+        [Required]
+        [Column("time")]
+        public int DateTime { get; set; }
+
+        [Required]
+        [Column("production")]
+        public double EnergyProduction { get; set; } = 0;
+
+        [Required]
+        [Column("production_deye")]
+        public double EnergyProductionDeye { get; set; } = 0;
+
+        [Required]
+        [Column("import")]
+        public double EnergyImport { get; set; } = 0;
+
+        [Required]
+        [Column("export")]
+        public double EnergyExport { get; set; } = 0;
+
+        [Required]
+        [Column("power_production")]
+        public int PowerProduction { get; set; } = 0;
+
+        [Required]
+        [Column("power_production_deye")]
+        public int PowerProductionDeye { get; set; } = 0;
+
+        [Required]
+        [Column("power_import")]
+        public int PowerImport { get; set; } = 0;
+
+        [Required]
+        [Column("power_export")]
+        public int PowerExport { get; set; } = 0;
+
+        [NotMapped]
+        public int PowerConsumption { get; set; } = 0;
+
+        [NotMapped]
+        public int PowerUse { get; set; } = 0;
+
+        [NotMapped]
+        public int PowerStore { get; set; } = 0;
+
+        [NotMapped]
+        public bool Correct { get; set; } = false;
+    }
+}
