@@ -4,10 +4,13 @@ import { Home } from "./components/pages/Home";
 const AppRoutes = [
     {
         index: true,
-        element: <Home />
+        path: "/",
+        element: <Home />,
+        title: "Strona główna",
     }, {
         path: "/energy",
-        element: <Energy />
+        element: <Energy />,
+        title: "Energia"
     }
 ];
 

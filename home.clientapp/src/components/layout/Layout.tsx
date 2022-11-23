@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import { Sidebar } from './Sidebar'
+import { Title } from './Title';
 import { Topbar } from './Topbar';
 
 type LayoutProps = {
@@ -13,7 +14,7 @@ export function Layout({ children}: LayoutProps) {
             <div id="page-wrapper">
                 <Topbar></Topbar>
                 <div id="page-container">
-                    <div className="page-title">Tytuł</div>
+                    <Title></Title>
                     {children}
                 </div>
             </div>
