@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Home.WebApi.Enums.Blinds;
 using Action = Home.WebApi.Enums.Blinds.Action;
 
-namespace Home.WebApi.Models
+namespace Home.WebApi.Database.Models
 {
     [Table("blinds_schedule")]
     public class BlindSchedule

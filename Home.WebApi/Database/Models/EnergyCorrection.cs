@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Home.WebApi.Models
+namespace Home.WebApi.Database.Models
 {
     [Table("energy_corrections")]
     public class EnergyCorrection

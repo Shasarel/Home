@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TBD.DbModels
+namespace Home.WebApi.Database.Models
 {
     [Table("meteo_daily")]
     public class DailyMeteoSummary
@@ -13,7 +13,7 @@ namespace TBD.DbModels
 
         [Required]
         [Column("day_ordinal")]
-        public int Date { get; set; }
+        public DateTimeOffset Date { get; set; }
 
         [Required]
         [Column("temperature_min")]

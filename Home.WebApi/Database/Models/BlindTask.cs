@@ -4,7 +4,7 @@ using Home.WebApi.Enums.Blinds;
 using Action = Home.WebApi.Enums.Blinds.Action;
 using TaskStatus = Home.WebApi.Enums.Blinds.TaskStatus;
 
-namespace Home.WebApi.Models
+namespace Home.WebApi.Database.Models
 {
     [Table("blinds_task")]
     public class BlindTask
@@ -15,7 +15,7 @@ namespace Home.WebApi.Models
 
         [Required]
         [Column("time")] 
-        public int DateTime { get; set; }
+        public DateTimeOffset DateTime { get; set; }
 
         [Required]
         [Column("device")] 

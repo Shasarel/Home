@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Home.WebApi.Models
+namespace Home.WebApi.Database.Models
 {
     [Table("energy_daily")]
     public class DailyElectricitySummary
@@ -12,7 +12,7 @@ namespace Home.WebApi.Models
 
         [Required]
         [Column("day_ordinal")]
-        public int Date { get; set; }
+        public DateTimeOffset Date { get; set; }
 
         [Required]
         [Column("production")]

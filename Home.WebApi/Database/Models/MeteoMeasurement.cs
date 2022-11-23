@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Home.WebApi.Models
+namespace Home.WebApi.Database.Models
 {
     public class MeteoMeasurement
     {
@@ -11,7 +11,7 @@ namespace Home.WebApi.Models
 
         [Required] 
         [Column("time")] 
-        public int DateTime { get; set; }
+        public DateTimeOffset DateTime { get; set; }
 
         [Required]
         [Column("temperature")]

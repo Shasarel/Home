@@ -1,4 +1,4 @@
-using Home.WebApi;
+using Home.WebApi.Database;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
