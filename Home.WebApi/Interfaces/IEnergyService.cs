@@ -5,6 +5,6 @@ namespace Home.WebApi.Interfaces
 {
     public interface IEnergyService
     {
-        EnergyDto GetEnergyData();
+        EnergyDto GetEnergyData(DateTimeOffset fromDate, DateTimeOffset toDate);
     }
 }

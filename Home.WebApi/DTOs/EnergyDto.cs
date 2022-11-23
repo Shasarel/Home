@@ -8,10 +8,10 @@
 
         public double Export { get; set; }
 
-        public double Use => 1;
+        public double Use { get; set; }
 
-        public double Consumption => 1;
+        public double Consumption { get; set; }
 
-        public double Store => 1;
+        public double Store { get; set; }
     }
 }

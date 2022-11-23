@@ -70,6 +70,10 @@ namespace Home.WebApi.Database
                 .Entity<ElectricityMeasurement>()
                 .Property(e => e.EnergyProduction)
                 .HasConversion<IntDouble1000Converter>();
+            modelBuilder
+               .Entity<ElectricityMeasurement>()
+               .Property(e => e.EnergyProductionDeye)
+               .HasConversion<IntDouble1000Converter>();
 
             modelBuilder
                 .Entity<ElectricityMeasurement>()

@@ -1,4 +1,6 @@
 using Home.WebApi.Database;
+using Home.WebApi.Interfaces;
+using Home.WebApi.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ builder.Services.AddDbContext<HomeContext>(options =>
 {
     options.UseSqlite("Data Source=home.sqlite;");
 });
+
+builder.Services.AddTransient<IEnergyService, EnergyService>();
 
 var app = builder.Build();
 

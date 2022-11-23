@@ -12,7 +12,7 @@ namespace Home.WebApi.Database.Models
 
         [Required]
         [Column("time")]
-        public DateTimeOffset DateTime { get; set; }
+        public DateTimeOffset DateTime { get; set; } = DateTimeOffset.UtcNow;
 
         [Required]
         [Column("production")]
@@ -47,13 +47,16 @@ namespace Home.WebApi.Database.Models
         public int PowerExport { get; set; } = 0;
 
         [NotMapped]
-        public int PowerConsumption { get; set; } = 0;
+        public double EnergyConsumption => EnergyUse + EnergyImport;
 
         [NotMapped]
-        public int PowerUse { get; set; } = 0;
+        public double EnergyUse => EnergyProductionAll - EnergyExport;
 
         [NotMapped]
-        public int PowerStore { get; set; } = 0;
+        public double EnergyStore => EnergyExport * 0.8 - EnergyImport;
+
+        [NotMapped]
+        public double EnergyProductionAll => EnergyProduction + EnergyProductionDeye;
 
         [NotMapped]
         public bool Correct { get; set; } = false;
