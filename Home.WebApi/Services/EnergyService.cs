@@ -43,5 +43,20 @@ namespace Home.WebApi.Services
                 Store = Math.Round(toMeasurement.EnergyStore - fromMeasurement.EnergyStore, 2),
             };
         }
+
+        public EnergyDto GetEnergyDataAll()
+        {
+            var correction = _context.EnergyCorrection.Sum(x => x.Correction);
+            var energyDto = GetEnergyData(DateTimeOffset.MinValue, DateTimeOffset.MaxValue);
+
+            energyDto.Store += correction;
+
+            return energyDto;
+        }
+
+        public EnergyDto GetEnergyDataToday()
+        {
+            return GetEnergyData(DateTime.Today, DateTimeOffset.UtcNow);
+        }
     }
 }

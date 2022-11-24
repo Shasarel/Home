@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { Card } from '../shared/Card';
 import { Fieldset } from '../shared/Fieldset';
 
@@ -14,4 +14,7 @@ export function Energy() {
             <Card title="Moc magazynowana" value={853} unit="W" percentage={25} percentageColor="yellow"></Card>
         </Fieldset>
     );
+}
+
+async function data() {
 }

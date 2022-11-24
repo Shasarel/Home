@@ -144,6 +144,11 @@ namespace Home.WebApi.Database
                 .Entity<DailyMeteoSummary>()
                 .Property(e => e.PressureMax)
                 .HasConversion<IntDouble100Converter>();
+
+            modelBuilder
+                .Entity<EnergyCorrection>()
+                .Property(e => e.Correction)
+                .HasConversion<IntDouble1000Converter>();
         }
 
         public DbSet<BlindSchedule> BlindSchedule { get; set; }
