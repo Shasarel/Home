@@ -8,9 +8,9 @@ export function Home() {
     const [data, setData] = useState("");
 
     useEffect(() => {
-            fetch("/energy")
-                .then(response => response.text()
-                    .then(text => setData(text)))
+        fetch("api/home")
+            .then(response => response.text()
+                .then(text => console.log(text)))
     }, []);
 
     return (

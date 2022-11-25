@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace Home.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class EnergyController : ControllerBase
     {
 
