@@ -1,22 +1,22 @@
-a.sidebar-button {
+.sidebar-button {
     color: var(--text-grey);
     display: flex;
     align-items: center;
     padding: 1.5rem;
 }
 
-a.sidebar-button-active {
+.sidebar-button-active {
     background: var(--background-blue) !important;
     color: white;
 }
 
-a.sidebar-button:hover {
+.sidebar-button:hover {
     color: white;
     background: var(--background-dark-graphite);
     text-decoration: none;
 }
 
-a.sidebar-button > .sidebar-button-text {
+.sidebar-button > .sidebar-button-text {
     font-size: 1rem;
     margin-left: 1rem;
 }

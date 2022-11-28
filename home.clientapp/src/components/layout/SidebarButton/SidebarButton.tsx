@@ -1,21 +1,25 @@
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { Route } from "../../../core/Route";
 import { Icon } from "../Icon/Icon";
 import './SidebarButton.css'
 
 interface SidebarButtonProps {
-    name: string,
-    iconName: string,
-    route: string
+    route: Route,
+    iconName: string
 }
 
-export const SidebarButton = ({ name, iconName, route }: SidebarButtonProps) => {
+export const SidebarButton = ({ route, iconName}: SidebarButtonProps) => {
     const location = useLocation();
-    const buttonClasses = "sidebar-button" + (location.pathname === route ? " sidebar-button-active" : "");
+    let navLinkClasses = "sidebar-button";
+
+    if ((route.path !== '/' && (location.pathname.startsWith(route.path))) ||
+        (route.path === '/' && location.pathname === "/"))
+        navLinkClasses += " sidebar-button-active";
 
     return (
-        <a href={route} className={buttonClasses}>
+        <NavLink className={navLinkClasses} to={route.path}>
             <Icon iconName={iconName}></Icon>
-            <span className="sidebar-button-text">{name}</span>
-        </a>
+            <span className="sidebar-button-text">{route.title}</span>
+        </NavLink>
     );
 }
