@@ -15,12 +15,12 @@ export function LoadComponendWithData<TResponse>(
         get<TResponse>(url)
             .then(x => setData(x))
             .catch(error => setErrorData(error))
-    }, []);
+    }, [url]);
 
-    if (errorData != undefined)
+    if (errorData !== undefined)
         return <ErrorPage message={errorData.message}></ErrorPage>
 
-    if (data == undefined) {
+    if (data === undefined) {
         return <Loader></Loader>
     }
 

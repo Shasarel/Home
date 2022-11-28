@@ -1,4 +1,4 @@
-﻿import { Energy } from "./components/pages/Energy";
+import { Energy } from "./components/pages/Energy";
 import { Home } from "./components/pages/Home";
 
 const AppRoutes = [

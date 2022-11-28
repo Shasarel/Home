@@ -1,4 +1,4 @@
-﻿import { LoadComponendWithData } from '../../core/LoadComponentWithData';
+import { LoadComponendWithData } from '../../core/LoadComponentWithData';
 import { EnergyDto } from '../../dtos/EnergyDto';
 import { Card } from '../shared/Card/Card';
 import { Fieldset } from '../shared/Fieldset/Fieldset';

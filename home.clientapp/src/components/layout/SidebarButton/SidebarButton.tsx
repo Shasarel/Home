@@ -1,4 +1,4 @@
-﻿import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Icon } from "../Icon/Icon";
 import './SidebarButton.css'
 
@@ -10,7 +10,7 @@ interface SidebarButtonProps {
 
 export const SidebarButton = ({ name, iconName, route }: SidebarButtonProps) => {
     const location = useLocation();
-    const buttonClasses = "sidebar-button" + (location.pathname == route ? " sidebar-button-active" : "");
+    const buttonClasses = "sidebar-button" + (location.pathname === route ? " sidebar-button-active" : "");
 
     return (
         <a href={route} className={buttonClasses}>
