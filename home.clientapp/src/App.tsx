@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
-import { Layout } from './components/layout/Layout';
-import './style.css';
+import { Layout } from './components/layout/Layout/Layout';
+import './App.css';
 
 function App() {
   return (

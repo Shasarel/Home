@@ -1,5 +1,6 @@
 ﻿import { useLocation } from "react-router-dom";
-import { Icon } from "./Icon";
+import { Icon } from "../Icon/Icon";
+import './SidebarButton.css'
 
 interface SidebarButtonProps {
     name: string,
@@ -9,12 +10,12 @@ interface SidebarButtonProps {
 
 export const SidebarButton = ({ name, iconName, route }: SidebarButtonProps) => {
     const location = useLocation();
-    const buttonClasses = "navbar-link" + (location.pathname == route ? " navbar-link-active" : "");
+    const buttonClasses = "sidebar-button" + (location.pathname == route ? " sidebar-button-active" : "");
 
     return (
         <a href={route} className={buttonClasses}>
             <Icon iconName={iconName}></Icon>
-            <span className="navbar-text">{name}</span>
+            <span className="sidebar-button-text">{name}</span>
         </a>
     );
 }

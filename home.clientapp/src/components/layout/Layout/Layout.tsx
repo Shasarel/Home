@@ -1,7 +1,8 @@
 ﻿import React from 'react';
-import { Sidebar } from './Sidebar'
-import { Title } from './Title';
-import { Topbar } from './Topbar';
+import { Sidebar } from '../Sidebar/Sidebar';
+import { Title } from '../Title/Title';
+import { Topbar } from '../Topbar/Topbar';
+import "./Layout.css"
 
 type LayoutProps = {
     children: React.ReactNode;

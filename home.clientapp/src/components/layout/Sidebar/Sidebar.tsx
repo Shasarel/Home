@@ -1,17 +1,12 @@
-﻿import { SidebarButton } from "./SidebarButton";
+﻿import { Logo } from "../Logo/Logo";
+import { SidebarButton } from "../SidebarButton/SidebarButton";
+import './Sidebar.css'
 
 export const Sidebar = () => {
     return (
-             <div id="sidebar">
-                <a id="logo" href="/">
-                    <b id="logo-icon">
-                        <i className="fas fa-home"></i>
-                    </b>
-                    <span id="logo-text">
-                        Home
-                    </span>
-                </a>
-                <nav id="navbar">
+        <div id="sidebar">
+            <Logo></Logo>
+                <nav>
                     <SidebarButton name="Strona główna" iconName="fas fa-th-large" route="/"></SidebarButton>
                     <SidebarButton name="Energia" iconName="fas fa-bolt" route="/energy"></SidebarButton>
                     <SidebarButton name="Rolety" iconName="far fa-window-maximize" route="meteo"></SidebarButton>

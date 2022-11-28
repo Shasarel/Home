@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { get} from "./request";
-import { ErrorPage } from "../components/shared/ErrorPage";
-import { Loader } from "../components/shared/Loader";
+import { ErrorPage } from "../components/shared/ErrorPage/ErrorPage";
+import { Loader } from "../components/shared/Loader/Loader";
 
 
 export function LoadComponendWithData<TResponse>(

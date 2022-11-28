@@ -1,5 +1,6 @@
 ﻿import { useLocation } from "react-router-dom";
-import AppRoutes from "../../AppRoutes";
+import AppRoutes from "../../../AppRoutes";
+import "./Title.css"
 
 export function Title() {
     const location = useLocation();

@@ -1,0 +1,56 @@
+.fieldset {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    margin: 0 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+}
+
+.fieldset-legend {
+    font-size: 2rem;
+    margin-left: 3rem;
+}
+
+@media(max-width: 130rem) {
+    .fieldset {
+        max-width: 91rem;
+    }
+}
+
+@media(max-width: 115rem) {
+    .fieldset {
+        max-width: 76rem;
+    }
+}
+
+@media(max-width: 100rem) {
+    .fieldset {
+        max-width:60.5rem;
+    }
+}
+
+@media(max-width: 85rem) {
+    .fieldset {
+        max-width: 45.5rem;
+    }
+}
+
+@media(max-width: 59rem) {
+    .fieldset {
+        max-width: 30.5rem;
+    }
+}
+@media(max-width: 44rem) {
+    .fieldset-legend {
+        margin-left: 1rem;
+    }
+
+    .fieldset {
+        flex-direction: column;
+    }
+
+    .fieldset {
+        padding: 0 1rem !important;
+    }
+}

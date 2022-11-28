@@ -1,0 +1,28 @@
+.topbar-button {
+    background: var(--background-graphite);
+    padding: 0.5rem;
+    border-style: solid;
+    border-color: dimgrey;
+    border-radius: 2px;
+    border-width: 1px;
+    margin-left: 0.5rem;
+    color: var(--text-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+}
+
+.topbar-button:hover {
+    background: var(--background-dark-graphite);
+    color: white;
+}
+
+.topbar-text{
+    margin-left:0.5rem;
+}
+@media(max-width: 44rem) {
+    .topbar-text {
+        display:none;
+    }
+}

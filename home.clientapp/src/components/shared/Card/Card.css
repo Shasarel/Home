@@ -1,0 +1,61 @@
+div.card {
+    background: white;
+    border-color: lightgray;
+    width: 14rem;
+    height: 10rem;
+    margin: 0.5rem;
+    border-width: 0.0625rem;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+div.card-title {
+    height: 30%;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.card-top {
+    height: 60%;
+}
+
+div.card-top-number {
+    height: 55%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+}
+
+div.card-top-unit {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+div.card-body {
+    height: 70%;
+}
+
+div.card-bottom {
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.card-bottom-progressbar {
+    height: 1rem;
+    width: 80%;
+    background: lightgray;
+    border-radius: 1rem;
+    padding: 0.125rem;
+}
+
+    div.card-bottom-progressbar > span {
+        display: block;
+        height: 100%;
+        border-radius: 1rem;
+        box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+    }

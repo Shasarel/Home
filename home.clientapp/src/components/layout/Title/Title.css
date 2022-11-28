@@ -1,0 +1,8 @@
+div.page-title {
+    display: inline;
+    padding: 1rem;
+    padding-left: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 auto 0 0;
+}

@@ -1,0 +1,10 @@
+#sidebar {
+    width: 15.5rem;
+    background: var(--background-graphite);
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
+}
+@media(max-width: 1150px) {
+    #sidebar {
+        width: 5rem;
+    }
+}

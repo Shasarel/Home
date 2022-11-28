@@ -1,3 +1,5 @@
+import "./Fieldset.css"
+
 type FieldsetProps = {
     children: React.ReactNode;
     title: string;
@@ -5,8 +7,8 @@ type FieldsetProps = {
 
 export function Fieldset({ children, title }: FieldsetProps) {
     return (
-        <fieldset className="card-peity-fieldset">
-            <legend className="card-peity-legend">{title}</legend>
+        <fieldset className="fieldset">
+            <legend className="fieldset-legend">{title}</legend>
             {children}
         </fieldset>
     );

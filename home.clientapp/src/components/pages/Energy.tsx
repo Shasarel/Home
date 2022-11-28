@@ -1,7 +1,7 @@
 ﻿import { LoadComponendWithData } from '../../core/LoadComponentWithData';
 import { EnergyDto } from '../../dtos/EnergyDto';
-import { Card } from '../shared/Card';
-import { Fieldset } from '../shared/Fieldset';
+import { Card } from '../shared/Card/Card';
+import { Fieldset } from '../shared/Fieldset/Fieldset';
 
 export function Energy() {
     return LoadComponendWithData("api/energy?start=2022-10-01&end=2022-10-02", ((data: EnergyDto) =>
