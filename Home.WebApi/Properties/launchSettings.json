@@ -1,4 +1,22 @@
-﻿{
+{
+  "profiles": {
+    "Home.WebApi": {
+      "commandName": "Project",
+      "launchUrl": "api/home",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5030"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchUrl": "api/home",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  },
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
@@ -6,26 +24,6 @@
     "iisExpress": {
       "applicationUrl": "http://localhost:7651",
       "sslPort": 0
-    }
-  },
-  "profiles": {
-    "Home.WebApi": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "launchUrl": "api/home",
-      "applicationUrl": "http://localhost:5030",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "api/home",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
     }
   }
 }
