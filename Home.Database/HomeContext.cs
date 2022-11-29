@@ -6,8 +6,20 @@ namespace Home.WebApi.Database
 {
    public sealed class HomeContext : DbContext
     {
+        public DbSet<BlindSchedule> BlindSchedule { get; set; }
+        public DbSet<BlindTask> BlindTask { get; set; }
+        public DbSet<DailyElectricitySummary> DailyElectricitySummary { get; set; }
+        public DbSet<DailyMeteoSummary> DailyMeteoSummary { get; set; }
+        public DbSet<ElectricityMeasurement> ElectricityMeasurement { get; set; }
+        public DbSet<EnergyCorrection> EnergyCorrection { get; set; }
+        public DbSet<MeteoMeasurement> MeteoMeasurement { get; set; }
         public HomeContext(DbContextOptions<HomeContext> options) : base(options)
         {
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=home.sqlite;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -151,13 +163,5 @@ namespace Home.WebApi.Database
                 .Property(e => e.Correction)
                 .HasConversion<IntDouble1000Converter>();
         }
-
-        public DbSet<BlindSchedule> BlindSchedule { get; set; }
-        public DbSet<BlindTask> BlindTask { get; set; }
-        public DbSet<DailyElectricitySummary> DailyElectricitySummary { get; set; }
-        public DbSet<DailyMeteoSummary> DailyMeteoSummary { get; set; }
-        public DbSet<ElectricityMeasurement> ElectricityMeasurement { get; set; }
-        public DbSet<EnergyCorrection> EnergyCorrection { get; set; }
-        public DbSet<MeteoMeasurement> MeteoMeasurement { get; set; }
     }
 }
