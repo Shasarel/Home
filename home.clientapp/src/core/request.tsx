@@ -18,7 +18,7 @@ function request<TResponse>(
     return fetch(url, config)
         .then((response) => {
             if (!response.ok)
-                throw new Error(response.statusText);
+                throw new Error(response.status.toString());
             return response.json()
         })
         .then((data) => data as TResponse);

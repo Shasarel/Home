@@ -4,7 +4,12 @@ import "./Title.css"
 
 export function Title() {
     const location = useLocation();
-    const title = Object.values(AppRoutes).filter(x => x.path === location.pathname)[0].title;
+    const route = Object.values(AppRoutes).filter(x => x.path === location.pathname);
+    let title;
+
+    if (route.length > 0)
+        title = route[0].title;
+
     return (
         <div className="page-title">{title}</div>
     );

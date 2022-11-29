@@ -8,18 +8,24 @@
     flex-wrap: nowrap;
     background: var(--background-grey);
 }
+
 #page-wrapper {
     width: calc(100% - 15.5rem);
     display: flex;
     flex-flow: column nowrap;
+    min-height: 100%;
+    align-items: flex-start;
 }
 
 #page-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    align-items:center;
     flex-direction: column;
     padding-top: 4rem;
+    min-height: calc(100% - 4rem);
+    width: 100%
 }
 @media(max-width: 72rem) {
 

@@ -1,5 +1,7 @@
+import "./Loader.css"
+
 export function Loader() {
     return (
-        <div>LOADER</div>
+        <span id="loader"></span>
         );
 }

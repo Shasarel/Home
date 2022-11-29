@@ -6,6 +6,6 @@ type ErrorPageProps = {
 
 export function ErrorPage({ message }: ErrorPageProps) {
     return (
-        <div>{message}</div>
+        <div id="errorpage">Wystąpił błąd {message}</div>
     );
 }
