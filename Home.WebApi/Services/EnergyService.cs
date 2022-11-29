@@ -2,8 +2,6 @@
 using Home.WebApi.Database.Models;
 using Home.WebApi.DTOs;
 using Home.WebApi.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 
 namespace Home.WebApi.Services
 {

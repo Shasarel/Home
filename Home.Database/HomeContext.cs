@@ -1,4 +1,5 @@
-﻿using Home.WebApi.Database.Models;
+﻿using Home.Configuration;
+using Home.WebApi.Database.Models;
 using Home.WebApi.Database.ValueConverters;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,7 +20,7 @@ namespace Home.WebApi.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=home.sqlite;");
+            optionsBuilder.UseSqlite(HomeConfig.Default!.DatabasePath);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
