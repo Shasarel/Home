@@ -14,13 +14,11 @@ namespace Home.WebApi.Controllers
     {
 
         private readonly ILogger<EnergyController> _logger;
-        private readonly HomeContext _context;
         private readonly IEnergyService _energyService; 
 
-        public EnergyController(ILogger<EnergyController> logger, HomeContext context, IEnergyService energyService)
+        public EnergyController(ILogger<EnergyController> logger, IEnergyService energyService)
         {
             _logger = logger;
-            _context = context;
             _energyService = energyService;
         }
 

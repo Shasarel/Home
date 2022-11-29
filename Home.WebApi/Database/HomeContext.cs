@@ -61,6 +61,7 @@ namespace Home.WebApi.Database
                 .Entity<DailyElectricitySummary>()
                 .Property(e => e.EnergyImportSum)
                 .HasConversion<IntDouble1000Converter>();
+
             modelBuilder
                 .Entity<DailyElectricitySummary>()
                 .Property(e => e.EnergyExportSum)
