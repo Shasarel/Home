@@ -19,8 +19,20 @@ namespace Home.WebApi.Controllers
         {
             return new HomeDto
             {
-                EnergyToday = _energyService.GetEnergyDataToday(),
+                EnergyToday = _energyService.GetEnergyData(
+                    DateTime.Today, 
+                    DateTime.Today.AddDays(1)),
+                EnergyYesterday = _energyService.GetEnergyData
+                    (DateTime.Today.AddDays(-1),
+                    DateTime.Today.AddDays(-1)),
+                EnergyThisYear = _energyService.GetEnergyData(
+                    new DateTime(DateTime.Now.Year, 1, 1), 
+                    DateTime.Today.AddDays(1)),
+                EnergyLastYear = _energyService.GetEnergyData(
+                    new DateTime(DateTime.Now.Year - 1, 1, 1), 
+                    new DateTime(DateTime.Now.Year -1, 12, 31)),
                 EnergyAll = _energyService.GetEnergyDataAll(),
+                MaxEnergyStore = _energyService.GetMaxEnergyStore()
             };
         }
     }

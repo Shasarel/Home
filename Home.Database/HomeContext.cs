@@ -52,32 +52,42 @@ namespace Home.WebApi.Database
 
             modelBuilder
                 .Entity<DailyElectricitySummary>()
-                .Property(e => e.EnergyProduction)
+                .Property(e => e.EnergyProductionDaily)
+                .HasConversion<IntDouble1000Converter>();
+
+            modelBuilder
+                .Entity<DailyElectricitySummary>()
+                .Property(e => e.EnergyProductionDeyeDaily)
                 .HasConversion<IntDouble1000Converter>();
 
             modelBuilder.
                 Entity<DailyElectricitySummary>()
-                .Property(e => e.EnergyExport)
+                .Property(e => e.EnergyExportDaily)
                 .HasConversion<IntDouble1000Converter>();
 
             modelBuilder
                 .Entity<DailyElectricitySummary>()
-                .Property(e => e.EnergyImport)
+                .Property(e => e.EnergyImportDaily)
                 .HasConversion<IntDouble1000Converter>();
 
             modelBuilder
                 .Entity<DailyElectricitySummary>()
-                .Property(e => e.EnergyProductionSum)
+                .Property(e => e.EnergyProductionTotal)
                 .HasConversion<IntDouble1000Converter>();
 
             modelBuilder
                 .Entity<DailyElectricitySummary>()
-                .Property(e => e.EnergyImportSum)
+                .Property(e => e.EnergyProductionDeyeTotal)
                 .HasConversion<IntDouble1000Converter>();
 
             modelBuilder
                 .Entity<DailyElectricitySummary>()
-                .Property(e => e.EnergyExportSum)
+                .Property(e => e.EnergyImportTotal)
+                .HasConversion<IntDouble1000Converter>();
+
+            modelBuilder
+                .Entity<DailyElectricitySummary>()
+                .Property(e => e.EnergyExportTotal)
                 .HasConversion<IntDouble1000Converter>();
 
             modelBuilder

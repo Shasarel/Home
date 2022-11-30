@@ -3,15 +3,12 @@ import "./Card.css"
 type CardProps = {
     title: string;
     value: number;
+    maxValue: number;
     unit: string;
-    percentage: number;
     percentageColor: string;
 }
 
-export function Card({ title, value, unit, percentage, percentageColor }: CardProps) {
-
-    let percentageString = percentage + "%";
-
+export function Card({ title, value, maxValue, unit, percentageColor }: CardProps) {
     return (
         <div className="card" >
             <div className="card-title">{title}</div>
@@ -22,10 +19,16 @@ export function Card({ title, value, unit, percentage, percentageColor }: CardPr
                 </div>
                 <div className="card-bottom">
                     <div className="card-bottom-progressbar">
-                        <span style={{ width: percentageString, background: percentageColor }}></span>
+                        <span style={{ width: CalculatePercentage(value, maxValue), background: percentageColor }}></span>
                     </div>
                 </div>
             </div>
         </div>
     );
+}
+
+function CalculatePercentage(value: number, maxValue: number) {
+    if (maxValue == 0)
+        return "0%";
+    return Math.round(Math.min(Math.abs(value / maxValue) * 100, 100)).toString() + "%";
 }

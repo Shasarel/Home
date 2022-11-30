@@ -9,6 +9,7 @@ a {
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
+    color: var(--text-dark-grey);
 }
 
 :root {
@@ -17,4 +18,5 @@ body {
     --background-dark-graphite: #141619;
     --background-blue: #2190c2;
     --text-grey: #d3d7db;
+    --text-dark-grey: #3E5569;
 }

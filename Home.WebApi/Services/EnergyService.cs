@@ -16,32 +16,20 @@ namespace Home.WebApi.Services
 
         public EnergyDto GetEnergyData(DateTimeOffset fromDate, DateTimeOffset toDate)
         {
-            var fromMeasurement = _context.ElectricityMeasurement
-                .Where(x => x.DateTime >= fromDate && x.DateTime < toDate)
-                .FirstOrDefault();  
+            var energyDto = new EnergyDto();
 
-            var toMeasurement = _context.ElectricityMeasurement
-                .Where(x => x.DateTime > fromDate && x.DateTime <= toDate)
-                .OrderByDescending(x => x.Id)
-                .FirstOrDefault();
-
-            toMeasurement ??= new ElectricityMeasurement();
-            fromMeasurement ??= new ElectricityMeasurement();
-
-            if (fromMeasurement.Id == 1)
-                fromMeasurement = new ElectricityMeasurement();
-
-            return new EnergyDto
+            if (toDate > DateTime.Today)
             {
-                Production = Math.Round(toMeasurement.EnergyProductionAll - fromMeasurement.EnergyProductionAll, 2),
-                Import = Math.Round(toMeasurement.EnergyImport - fromMeasurement.EnergyImport, 2),
-                Export = Math.Round(toMeasurement.EnergyExport - fromMeasurement.EnergyExport, 2),
-                Use = Math.Round(toMeasurement.EnergyUse - fromMeasurement.EnergyUse, 2),
-                Consumption = Math.Round(toMeasurement.EnergyConsumption - fromMeasurement.EnergyConsumption, 2),
-                Store = Math.Round(toMeasurement.EnergyStore - fromMeasurement.EnergyStore, 2),
-            };
-        }
+                energyDto += GetEnergyToday();
+            }
 
+            if (fromDate < DateTime.Today)
+            {
+                energyDto += GetEnergyPast(fromDate, toDate);
+            }
+
+            return energyDto;
+        }
         public EnergyDto GetEnergyDataAll()
         {
             var correction = _context.EnergyCorrection.Sum(x => x.Correction);
@@ -50,11 +38,6 @@ namespace Home.WebApi.Services
             energyDto.Store += correction;
 
             return energyDto;
-        }
-
-        public EnergyDto GetEnergyDataToday()
-        {
-            return GetEnergyData(DateTime.Today, DateTimeOffset.UtcNow);
         }
 
         public async Task<PowerDto> CurrentPower()
@@ -69,6 +52,80 @@ namespace Home.WebApi.Services
                 Import = electricityMeasurement.PowerImport,
                 Export = electricityMeasurement.PowerExport,
                 Store = electricityMeasurement.PowerStore,
+            };
+        }
+
+        public double GetMaxEnergyStore() =>
+            _context
+            .DailyElectricitySummary
+            .AsEnumerable()
+            .Max(x => x.EnergyStoreTotal +
+                _context
+                .EnergyCorrection
+                .AsEnumerable()
+                .Where(y => y.Date <= x.Date)
+                .Sum(x => x.Correction));
+
+        private EnergyDto GetEnergyPast(DateTimeOffset fromDate, DateTimeOffset toDate)
+        {
+            var minDate = new DateTime(1900, 1, 1);
+
+            var toDateUpToToday = toDate > DateTime.Today ? DateTime.Today : toDate;
+            var fromDateAdjusted = fromDate > minDate ? fromDate.AddDays(-1) : fromDate;
+
+            var fromMeasurement = _context.DailyElectricitySummary
+                .Where(x => x.Date >= fromDateAdjusted && x.Date < toDateUpToToday)
+                .OrderBy(x => x.Date)
+                .FirstOrDefault();
+
+            var toMeasurement = _context.DailyElectricitySummary
+                .Where(x => x.Date > fromDateAdjusted && x.Date <= toDateUpToToday)
+                .OrderByDescending(x => x.Date)
+                .FirstOrDefault();
+
+            toMeasurement ??= new DailyElectricitySummary();
+            fromMeasurement ??= new DailyElectricitySummary();
+
+            if (fromMeasurement.Id == 1)
+                fromMeasurement = new DailyElectricitySummary();
+
+            return new EnergyDto
+            {
+                Production = toMeasurement.EnergyProductionTotalAll - fromMeasurement.EnergyProductionTotalAll,
+                Import = toMeasurement.EnergyImportTotal - fromMeasurement.EnergyImportTotal,
+                Export = toMeasurement.EnergyExportTotal - fromMeasurement.EnergyExportTotal,
+                Use = toMeasurement.EnergyUseTotal - fromMeasurement.EnergyUseTotal,
+                Consumption = toMeasurement.EnergyConsumptionTotal - fromMeasurement.EnergyConsumptionTotal,
+                Store = toMeasurement.EnergyStoreTotal - fromMeasurement.EnergyStoreTotal,
+            };
+        }
+
+        private EnergyDto GetEnergyToday()
+        {
+            var fromMeasurement = _context.ElectricityMeasurement
+                .Where(x => x.DateTime >= DateTime.Today && x.DateTime < DateTime.Today.AddDays(1))
+                .OrderBy(x => x.DateTime)
+                .FirstOrDefault();
+
+            var toMeasurement = _context.ElectricityMeasurement
+                .Where(x => x.DateTime > DateTime.Today && x.DateTime <= DateTime.Today.AddDays(1))
+                .OrderByDescending(x => x.DateTime)
+                .FirstOrDefault();
+
+            toMeasurement ??= new ElectricityMeasurement();
+            fromMeasurement ??= new ElectricityMeasurement();
+
+            if (fromMeasurement.Id == 1)
+                fromMeasurement = new ElectricityMeasurement();
+
+            return new EnergyDto
+            {
+                Production = toMeasurement.EnergyProductionAll - fromMeasurement.EnergyProductionAll,
+                Import = toMeasurement.EnergyImport - fromMeasurement.EnergyImport,
+                Export = toMeasurement.EnergyExport - fromMeasurement.EnergyExport,
+                Use = toMeasurement.EnergyUse - fromMeasurement.EnergyUse,
+                Consumption = toMeasurement.EnergyConsumption - fromMeasurement.EnergyConsumption,
+                Store = toMeasurement.EnergyStore - fromMeasurement.EnergyStore,
             };
         }
     }

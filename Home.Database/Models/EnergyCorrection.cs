@@ -12,7 +12,7 @@ namespace Home.WebApi.Database.Models
 
         [Required]
         [Column("date")]
-        public string? Date { get; set; }
+        public DateTimeOffset Date { get; set; }
 
         [Required]
         [Column("correction")]
