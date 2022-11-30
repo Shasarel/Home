@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Home.MeasurementFetcher.Dtos
 {
-    internal sealed class MeteoDataDto: IDataDto<MeteoMeasurement>
+    public sealed class MeteoDataDto
     {
         [JsonPropertyName("sitemp")]
         public double Temperature { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Home.MeasurementFetcher.Dtos
 {
-    internal sealed class InverterDataDto
+    public sealed class InverterDataDto
     {
         [JsonPropertyName("power")]
         public int Power { get; set; }

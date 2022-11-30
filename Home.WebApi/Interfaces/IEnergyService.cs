@@ -1,5 +1,5 @@
 ﻿using Home.WebApi.Controllers;
-using Home.WebApi.DTOs;
+using Home.WebApi.Dtos;
 
 namespace Home.WebApi.Interfaces
 {
@@ -8,5 +8,6 @@ namespace Home.WebApi.Interfaces
         EnergyDto GetEnergyData(DateTimeOffset fromDate, DateTimeOffset toDate);
         EnergyDto GetEnergyDataToday();
         EnergyDto GetEnergyDataAll();
+        Task<PowerDto> CurrentPower();
     }
 }

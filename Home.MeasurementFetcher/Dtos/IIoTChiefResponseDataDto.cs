@@ -1,6 +1,6 @@
 ﻿namespace Home.MeasurementFetcher.Dtos
 {
-    internal interface IDataDto<TEntity>
+    internal interface IIoTChiefResponseDataDto<TEntity>
     {
         public TEntity ConvertToEntity();
     }

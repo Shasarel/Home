@@ -28,7 +28,7 @@ namespace Home.Configuration
 
         private static Config? GetConfiguration() =>
             new ConfigurationBuilder()
-            .AddJsonFile(GetConfigFilePath())
+            .AddJsonFile(GetConfigFilePath(), false)
             .Build()
             .Get<Config>();
 

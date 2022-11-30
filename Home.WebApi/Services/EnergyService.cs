@@ -1,6 +1,6 @@
 ﻿using Home.WebApi.Database;
 using Home.WebApi.Database.Models;
-using Home.WebApi.DTOs;
+using Home.WebApi.Dtos;
 using Home.WebApi.Interfaces;
 
 namespace Home.WebApi.Services
@@ -18,7 +18,7 @@ namespace Home.WebApi.Services
         {
             var fromMeasurement = _context.ElectricityMeasurement
                 .Where(x => x.DateTime >= fromDate && x.DateTime < toDate)
-                .FirstOrDefault();
+                .FirstOrDefault();  
 
             var toMeasurement = _context.ElectricityMeasurement
                 .Where(x => x.DateTime > fromDate && x.DateTime <= toDate)
@@ -55,6 +55,21 @@ namespace Home.WebApi.Services
         public EnergyDto GetEnergyDataToday()
         {
             return GetEnergyData(DateTime.Today, DateTimeOffset.UtcNow);
+        }
+
+        public async Task<PowerDto> CurrentPower()
+        {
+            var electricityMeasurement = await MeasurementFetcher.MeasurementFetcher.GetElectricityMeasurement();
+
+            return new()
+            {
+                Production = electricityMeasurement.PowerProductionAll,
+                Consumption = electricityMeasurement.PowerConsumption,
+                Use = electricityMeasurement.PowerUse,
+                Import = electricityMeasurement.PowerImport,
+                Export = electricityMeasurement.PowerExport,
+                Store = electricityMeasurement.PowerStore,
+            };
         }
     }
 }

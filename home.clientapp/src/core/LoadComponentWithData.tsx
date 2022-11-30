@@ -6,15 +6,22 @@ import { Loader } from "../components/shared/Loader/Loader";
 
 export function LoadComponendWithData<TResponse>(
     url: string,
-    componentCallback: (data: TResponse) => JSX.Element) {
+    componentCallback: (data: TResponse) => JSX.Element,
+    interval: number = 0) {
 
     const [data, setData] = useState<TResponse>();
     const [errorData, setErrorData] = useState<Error>();
 
     useEffect(() => {
-        get<TResponse>(url)
-            .then(x => setData(x))
-            .catch(error => setErrorData(error))
+        const inter = setInterval(() =>
+            get<TResponse>(url)
+                .then(x => setData(x))
+                .catch(error => setErrorData(error)), interval);
+
+        return () => {
+            clearInterval(inter);
+        };
+
     }, [url]);
 
     if (errorData !== undefined)

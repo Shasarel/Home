@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Home.Configuration;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Home.WebApi.Database.Models
@@ -50,13 +51,25 @@ namespace Home.WebApi.Database.Models
         public double EnergyConsumption => EnergyUse + EnergyImport;
 
         [NotMapped]
+        public int PowerConsumption => PowerUse + PowerImport;
+
+        [NotMapped]
         public double EnergyUse => EnergyProductionAll - EnergyExport;
 
         [NotMapped]
-        public double EnergyStore => EnergyExport * 0.8 - EnergyImport;
+        public int PowerUse => PowerProductionAll - PowerExport;
+
+        [NotMapped]
+        public double EnergyStore => EnergyExport * HomeConfig.Default.EnergyReturnFactor - EnergyImport;
+
+        [NotMapped]
+        public int PowerStore => (int)(PowerExport * HomeConfig.Default.EnergyReturnFactor - PowerImport);
 
         [NotMapped]
         public double EnergyProductionAll => EnergyProduction + EnergyProductionDeye;
+
+        [NotMapped]
+        public int PowerProductionAll => PowerProduction + PowerProductionDeye;
 
         [NotMapped]
         public bool Correct { get; set; } = false;

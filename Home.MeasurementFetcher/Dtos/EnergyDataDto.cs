@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Home.MeasurementFetcher.Dtos
 {
-    internal sealed class EnergyDataDto: IDataDto<ElectricityMeasurement>
+    public sealed class EnergyDataDto
     {
         [JsonPropertyName("flara_data")]
         public InverterDataDto? FlaraData { get; set; }

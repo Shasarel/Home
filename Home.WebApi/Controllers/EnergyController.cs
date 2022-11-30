@@ -1,15 +1,11 @@
-using Home.WebApi.Database;
-using Home.WebApi.DTOs;
+using Home.WebApi.Dtos;
 using Home.WebApi.Interfaces;
-using Home.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 
 namespace Home.WebApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class EnergyController : ControllerBase
     {
 
@@ -23,9 +19,15 @@ namespace Home.WebApi.Controllers
         }
 
         [HttpGet]
-        public EnergyDto Get(DateTimeOffset start, DateTimeOffset end)
+        public EnergyDto GetHistoryData(DateTimeOffset start, DateTimeOffset end)
         {
             return _energyService.GetEnergyData(start, end);
+        }
+
+        [HttpGet]
+        public async Task<PowerDto> CurrentPower()
+        {
+            return await _energyService.CurrentPower();
         }
     }
 }

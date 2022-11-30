@@ -1,4 +1,4 @@
-﻿namespace Home.WebApi.DTOs
+﻿namespace Home.WebApi.Dtos
 {
     public class HomeDto
     {

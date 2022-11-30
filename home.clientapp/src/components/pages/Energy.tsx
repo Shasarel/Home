@@ -4,7 +4,7 @@ import { Card } from '../shared/Card/Card';
 import { Fieldset } from '../shared/Fieldset/Fieldset';
 
 export function Energy() {
-    return LoadComponendWithData("api/energy?start=2022-10-01&end=2022-10-02", ((data: EnergyDto) =>
+    return LoadComponendWithData("api/energy/currentpower", ((data: EnergyDto) =>
     (
         <Fieldset title="Energia">
             <Card title="Moc produkowana" value={data.production} unit="W" percentage={55} percentageColor="green"></Card>
@@ -14,5 +14,5 @@ export function Energy() {
             <Card title="Moc wykorzystywana" value={data.use} unit="W" percentage={20} percentageColor="yellow"></Card>
             <Card title="Moc magazynowana" value={data.store} unit="W" percentage={25} percentageColor="yellow"></Card>
         </Fieldset>
-    )));
+    )), 5000);
 }

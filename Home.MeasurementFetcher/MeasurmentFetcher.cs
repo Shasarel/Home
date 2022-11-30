@@ -20,14 +20,14 @@ namespace Home.MeasurementFetcher
         }
 
         public static async Task<ElectricityMeasurement> GetElectricityMeasurement() =>
-            await GetMeasurement<ElectricityMeasurement, EnergyDataDto>(HomeConfig.Default.IoTChiefUrl);
+            await GetMeasurement<ElectricityMeasurement, IotChiefEnergyResponseDto>(HomeConfig.Default.IoTChiefUrl);
 
         public static async Task<MeteoMeasurement> GetMeteoMeasurement() =>
-            await GetMeasurement<MeteoMeasurement, MeteoDataDto>(HomeConfig.Default.MeteoUrl);
+            await GetMeasurement<MeteoMeasurement, IoTChiefMeteoResponseDto>(HomeConfig.Default.MeteoUrl);
 
         internal static async Task<TEntity> GetMeasurement<TEntity, TDto>(string? requestUri) 
             where TEntity : new()
-            where TDto : IDataDto<TEntity>
+            where TDto : IIoTChiefResponseDataDto<TEntity>
         {
             using var client = new HttpClient();
             var result = await client.GetFromJsonAsync<TDto>(requestUri);

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Home.Database\Home.Database.csproj" />
+    <ProjectReference Include="..\Home.MeasurementFetcher\Home.MeasurementFetcher.csproj" />
   </ItemGroup>
 
 </Project>
