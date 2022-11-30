@@ -2,7 +2,9 @@
 {
     public sealed class Config
     {
-        public string? DatabasePath { get; set; }
-        public string? IoTChiefUrl { get; set; }
+        public string? DatabasePath { get; internal set; }
+        public string? IoTChiefUrl { get; internal set; }
+        public string? MeteoUrl { get; internal set; }
+        public int Altitude { get; internal set; }
     }
 }

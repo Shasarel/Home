@@ -2,7 +2,7 @@
 
 namespace Home.WebApi.Database.ValueConverters
 {
-    public class DateTimeOffsetTimestampConverter : ValueConverter<DateTimeOffset, long> 
+    internal sealed class DateTimeOffsetTimestampConverter : ValueConverter<DateTimeOffset, long> 
     {
         public DateTimeOffsetTimestampConverter() 
             : base(

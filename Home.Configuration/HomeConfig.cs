@@ -2,18 +2,18 @@
 
 namespace Home.Configuration
 {
-    public sealed class HomeConfig
+    public static class HomeConfig
     {
         private static readonly string _configFilePathEnv = "HOME_WEB_CONFIG";
         private static readonly string _defaultConfigFilePath = "appsettings.json";
 
         private static Config? _configurationData;
-        public static Config? Default
+        public static Config Default
         {
             get
             {
                 _configurationData ??= GetConfiguration();
-                return _configurationData;
+                return _configurationData!;
             }
         }
 

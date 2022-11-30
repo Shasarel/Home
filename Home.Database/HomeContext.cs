@@ -20,7 +20,7 @@ namespace Home.WebApi.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(HomeConfig.Default!.DatabasePath);
+            optionsBuilder.UseSqlite(HomeConfig.Default.DatabasePath);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

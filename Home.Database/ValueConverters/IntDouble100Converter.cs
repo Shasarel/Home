@@ -2,7 +2,7 @@
 
 namespace Home.WebApi.Database.ValueConverters
 {
-    public class IntDouble100Converter : ValueConverter<double, int>
+    internal sealed class IntDouble100Converter : ValueConverter<double, int>
     {
         public IntDouble100Converter()
             :base(
