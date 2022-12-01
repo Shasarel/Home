@@ -2,8 +2,11 @@
     width: 15.5rem;
     background: var(--background-graphite);
     box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    height: 100%;
 }
-@media(max-width: 1150px) {
+
+@media(max-width: 72rem) {
     #sidebar {
         width: 5rem;
     }

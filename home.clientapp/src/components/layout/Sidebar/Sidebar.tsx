@@ -1,14 +1,16 @@
 import AppRoutes from "../../../AppRoutes";
-import { Logo } from "../Logo/Logo";
 import { SidebarButton } from "../SidebarButton/SidebarButton";
 import './Sidebar.css'
 
-export const Sidebar = () => {
+type SidebarProps = {
+    toggleSidebar: (enabled: boolean) => void;
+}
+
+export const Sidebar = ({ toggleSidebar }: SidebarProps) => {
     return (
-        <div id="sidebar">
-            <Logo></Logo>
+        <div id="sidebar" onClick={() => toggleSidebar(false)}>
             <nav>
-                <SidebarButton route={AppRoutes.Home} iconName="fas fa-th-large"></SidebarButton>
+                <SidebarButton route={AppRoutes.Home} iconName="fas fa-home"></SidebarButton>
                 <SidebarButton route={AppRoutes.Energy} iconName="fas fa-bolt"></SidebarButton>
                 <SidebarButton route={AppRoutes.Blinds} iconName="far fa-window-maximize"></SidebarButton>
                 <SidebarButton route={AppRoutes.Meteo} iconName="fas fa-temperature-low"></SidebarButton>

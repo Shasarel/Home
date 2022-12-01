@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { Icon } from '../Icon/Icon';
 import './TopbarButton.css'
 
@@ -8,12 +9,20 @@ interface TopbarButtonProps {
 }
 
 export function TopbarButton({ name, route, iconName }: TopbarButtonProps) {
+
+    let className = "topbar-button";
+
+    if (route === "logout")
+        className += " topbar-button-logout";
+
     return (
-        <a href={ route }>
-            <div className="navbar-link topbar-button">
-                <Icon iconName={iconName}></Icon>
-                <span className="topbar-text">{name}</span>
-            </div>
-        </a>
+        <div className={className}>
+            <NavLink to={route}>
+                <div className="topbar-button-wrapper">
+                    <Icon iconName={iconName}></Icon>
+                    <span className="topbar-text">{name}</span>
+                </div>
+            </NavLink>
+        </div>
     );
 }

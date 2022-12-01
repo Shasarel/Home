@@ -1,18 +1,19 @@
 #topbar {
-    width: calc(100% - 17.5rem);
+    width: 100%;
     min-width: 15rem;
+    box-sizing: border-box;
     box-shadow: 1px 0 7px rgba(0, 0, 0, 0.05);
     background: var(--background-dark-graphite);
-    height: 2rem;
+    height: 4rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 1rem;
-    position: absolute;
 }
 
-@media(max-width: 72rem) {
-    #topbar {
-        width: calc(100% - 7rem);
-    }
+#topbar-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }

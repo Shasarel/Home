@@ -6,11 +6,27 @@
     border-radius: 2px;
     border-width: 1px;
     margin-left: 0.5rem;
+    min-width: 2rem;
+}
+
+.topbar-button-wrapper {
     color: var(--text-grey);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 2rem;
+}
+
+.hide-sidebar-button {
+    margin-right: auto;
+    margin-left: 0 !important;
+    background: var(--background-dark-graphite);
+    border:none;
+    padding-right:1.5rem;
+}   
+
+.topbar-button-logout{
+    margin-left:2rem;
+    background: var(--background-red);
 }
 
 .topbar-button:hover {
