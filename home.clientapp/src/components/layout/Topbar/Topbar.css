@@ -8,7 +8,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 1rem;
+    padding-right: 0.5rem;
+    position:absolute;
+    z-index:5;
 }
 
 #topbar-buttons {

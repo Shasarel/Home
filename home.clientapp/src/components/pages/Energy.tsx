@@ -7,7 +7,7 @@ export function Energy() {
     const maxPowerProduction = 8500;
     return LoadComponendWithData("api/energy/currentpower", ((data: EnergyDto) =>
     (
-        <Fieldset title="Energia">
+        <Fieldset title="Moc chwilowa">
             <Card title="Moc produkowana" value={data.production} unit="W" maxValue={maxPowerProduction} percentageColor="green"></Card>
             <Card title="Moc pobierana" value={data.import} unit="W" maxValue={maxPowerProduction} percentageColor="yellow"></Card>
             <Card title="Moc oddawana" value={data.export} unit="W" maxValue={maxPowerProduction} percentageColor="yellow"></Card>

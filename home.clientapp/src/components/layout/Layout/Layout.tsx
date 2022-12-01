@@ -9,17 +9,23 @@ type LayoutProps = {
 }
 
 export function Layout({ children }: LayoutProps) {
-    const [sidebarEnabled, setSidebarEnabled] = useState<boolean>(false);
+    const [sidebarEnabledDesktop, setSidebarEnabledDesktop] = useState<boolean>(true);
+    const [sidebarEnabledPhone, setSidebarEnabledPhone] = useState<boolean>(false);
 
-    const ToggleSidebar = (enabled: boolean) => {
-        setSidebarEnabled(enabled);
+    const ToggleSidebarAll = () => {
+        setSidebarEnabledDesktop(!sidebarEnabledDesktop);
+        setSidebarEnabledPhone(!sidebarEnabledPhone);
+    }; 
+
+    const ToggleSidebarPhone = (isEnabled: boolean) => {
+        setSidebarEnabledPhone(isEnabled);
     };
 
     return (
         <div id="layout">
-            <Topbar toogleSidebar={ToggleSidebar}></Topbar>
-            {sidebarEnabled ? <Sidebar toggleSidebar={ToggleSidebar}></Sidebar> : ""}
-            <div id="page-wrapper" onClick={() => ToggleSidebar(false)}>
+            <Topbar toggleSidebarAll={ToggleSidebarAll} toggleSidebarPhone={ToggleSidebarPhone}></Topbar>
+            <Sidebar toggleSidebarPhone={ToggleSidebarPhone} sidebarEnabledDesktop={sidebarEnabledDesktop} sidebarEnabledPhone={sidebarEnabledPhone}></Sidebar>
+            <div id="page-wrapper" className={sidebarEnabledDesktop ? "" : "page-wrapper-sidebar-disabled"} onClick={() => ToggleSidebarPhone(false)}>
                 <div id="page-container">
                     <Title></Title>
                     {children}

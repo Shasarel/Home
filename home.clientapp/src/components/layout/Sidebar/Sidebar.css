@@ -4,10 +4,21 @@
     box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
     position: fixed;
     height: 100%;
+    padding-top:4rem;
+    display:block;
+}
+
+@media(min-width: 72rem) {
+    .sidebar-disabled-desktop {
+        display: none !important;
+    }
 }
 
 @media(max-width: 72rem) {
     #sidebar {
         width: 5rem;
+    }
+    .sidebar-disabled-phone {
+        display: none !important;
     }
 }

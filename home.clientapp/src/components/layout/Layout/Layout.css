@@ -9,6 +9,12 @@
     display: flex;
     min-height: calc(100% - 4rem);
     background: var(--background-grey);
+    padding-top: 4rem;
+}
+
+.page-wrapper-sidebar-disabled {
+    width: 100% !important;
+    left: 0rem !important;
 }
 
 #page-container {
@@ -18,4 +24,12 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
+
+}
+@media(min-width: 72rem) {
+    #page-wrapper {
+        width: calc(100% - 15.5rem);
+        position:relative;
+        left: 15.5rem;
+    }
 }

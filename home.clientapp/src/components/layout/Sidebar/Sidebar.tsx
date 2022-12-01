@@ -3,12 +3,19 @@ import { SidebarButton } from "../SidebarButton/SidebarButton";
 import './Sidebar.css'
 
 type SidebarProps = {
-    toggleSidebar: (enabled: boolean) => void;
+    toggleSidebarPhone: (isEnabled: boolean) => void;
+    sidebarEnabledPhone: boolean;
+    sidebarEnabledDesktop: boolean;
 }
 
-export const Sidebar = ({ toggleSidebar }: SidebarProps) => {
+export const Sidebar = ({ toggleSidebarPhone, sidebarEnabledPhone, sidebarEnabledDesktop }: SidebarProps) => {
+
+    var className = sidebarEnabledPhone ? "" : "sidebar-disabled-phone";
+    className += sidebarEnabledDesktop ? "" : " sidebar-disabled-desktop";
+
+
     return (
-        <div id="sidebar" onClick={() => toggleSidebar(false)}>
+        <div id="sidebar" className={className} onClick={() => toggleSidebarPhone(false)}>
             <nav>
                 <SidebarButton route={AppRoutes.Home} iconName="fas fa-home"></SidebarButton>
                 <SidebarButton route={AppRoutes.Energy} iconName="fas fa-bolt"></SidebarButton>

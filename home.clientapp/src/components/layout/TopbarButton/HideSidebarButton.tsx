@@ -4,12 +4,12 @@ import './TopbarButton.css'
 
 interface HideSidebarButtonProps {
     iconName: string
-    toggleSidebar: (enabled: boolean) => void;
+    toggleSidebarAll: () => void;
 }
 
-export function HideSidebarButton({ iconName, toggleSidebar }: HideSidebarButtonProps) {
+export function HideSidebarButton({ iconName, toggleSidebarAll }: HideSidebarButtonProps) {
     return (
-        <div className="topbar-button hide-sidebar-button" onClick={() => toggleSidebar(true)}>
+        <div className="topbar-button hide-sidebar-button" onClick={() => toggleSidebarAll()}>
             <Icon iconName={iconName}></Icon>
         </div>
     );
