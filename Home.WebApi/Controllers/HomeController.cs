@@ -31,7 +31,9 @@ namespace Home.WebApi.Controllers
                 EnergyLastYear = _energyService.GetEnergyData(
                     new DateTime(DateTime.Now.Year - 1, 1, 1), 
                     new DateTime(DateTime.Now.Year -1, 12, 31)),
-                EnergyAll = _energyService.GetEnergyDataAll(),
+                EnergyAll = _energyService.GetEnergyData(
+                    new DateTime(1900,01,01),
+                    DateTime.Today),
                 MaxEnergyStore = _energyService.GetMaxEnergyStore()
             };
         }

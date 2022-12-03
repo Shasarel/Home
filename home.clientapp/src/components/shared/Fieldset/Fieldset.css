@@ -4,7 +4,9 @@
     margin: 0 3rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content:center;
     width: fit-content;
+    margin-bottom: 2rem;
 }
 
 .fieldset-legend {

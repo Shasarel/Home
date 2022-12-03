@@ -19,9 +19,13 @@ namespace Home.WebApi.Controllers
         }
 
         [HttpGet]
-        public EnergyDto GetHistoryData(DateTimeOffset start, DateTimeOffset end)
+        public EnergyHistoryDto History(DateTimeOffset from, DateTimeOffset to)
         {
-            return _energyService.GetEnergyData(start, end);
+            return new()
+            {
+                Energy = _energyService.GetEnergyData(from, to),
+                EnergyPrevious = _energyService.GetEnergyData(from.AddDays(-((to - from).Days + 1)), from.AddDays(-1))
+            };
         }
 
         [HttpGet]

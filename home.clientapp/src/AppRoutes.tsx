@@ -1,4 +1,5 @@
-import { Energy } from "./components/pages/Energy";
+import { Energy } from "./components/pages/Energy/Energy";
+import { EnergyHistory } from "./components/pages/EnergyHistory/EnergyHistory";
 import { Home } from "./components/pages/Home";
 
 const AppRoutes=
@@ -14,6 +15,12 @@ const AppRoutes=
         path: "/energy",
         title: "Energia",
         element: <Energy />
+    },
+    EnergyHistory: {
+        index: false,
+        path: "/energy/history/:from/:to",
+        title: "Energia - historia",
+        element: <EnergyHistory />
     },
     Blinds: {
         index: false,

@@ -30,15 +30,6 @@ namespace Home.WebApi.Services
 
             return energyDto;
         }
-        public EnergyDto GetEnergyDataAll()
-        {
-            var correction = _context.EnergyCorrection.Sum(x => x.Correction);
-            var energyDto = GetEnergyData(DateTimeOffset.MinValue, DateTimeOffset.MaxValue);
-
-            energyDto.Store += correction;
-
-            return energyDto;
-        }
 
         public async Task<PowerDto> CurrentPower()
         {
@@ -86,8 +77,17 @@ namespace Home.WebApi.Services
             toMeasurement ??= new DailyElectricitySummary();
             fromMeasurement ??= new DailyElectricitySummary();
 
+            var storeCorrection = 0.0;
+
             if (fromMeasurement.Id == 1)
-                fromMeasurement = new DailyElectricitySummary();
+            {
+                fromMeasurement = new();
+                storeCorrection = _context
+                    .EnergyCorrection
+                    .AsEnumerable()
+                    .Where(x => x.Date <= toDate)
+                    .Sum(x => x.Correction);
+            }
 
             return new EnergyDto
             {
@@ -96,7 +96,7 @@ namespace Home.WebApi.Services
                 Export = toMeasurement.EnergyExportTotal - fromMeasurement.EnergyExportTotal,
                 Use = toMeasurement.EnergyUseTotal - fromMeasurement.EnergyUseTotal,
                 Consumption = toMeasurement.EnergyConsumptionTotal - fromMeasurement.EnergyConsumptionTotal,
-                Store = toMeasurement.EnergyStoreTotal - fromMeasurement.EnergyStoreTotal,
+                Store = toMeasurement.EnergyStoreTotal - fromMeasurement.EnergyStoreTotal + storeCorrection,
             };
         }
 

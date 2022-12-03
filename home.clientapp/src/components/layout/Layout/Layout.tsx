@@ -26,7 +26,7 @@ export function Layout({ children }: LayoutProps) {
             <Topbar toggleSidebarAll={ToggleSidebarAll} toggleSidebarPhone={ToggleSidebarPhone}></Topbar>
             <Sidebar toggleSidebarPhone={ToggleSidebarPhone} sidebarEnabledDesktop={sidebarEnabledDesktop} sidebarEnabledPhone={sidebarEnabledPhone}></Sidebar>
             <div id="page-wrapper" className={sidebarEnabledDesktop ? "" : "page-wrapper-sidebar-disabled"} onClick={() => ToggleSidebarPhone(false)}>
-                <div id="page-container">
+                <div id="content-container">
                     <Title></Title>
                     {children}
                 </div>

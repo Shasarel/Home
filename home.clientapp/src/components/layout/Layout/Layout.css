@@ -17,15 +17,23 @@
     left: 0rem !important;
 }
 
-#page-container {
+#content-container {
     display: flex;
     justify-content: flex-start;
     align-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-
 }
+
+.flex-column-center{
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
 @media(min-width: 72rem) {
     #page-wrapper {
         width: calc(100% - 15.5rem);

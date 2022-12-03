@@ -1,0 +1,18 @@
+.button {
+    color: white;
+    width: 14rem;
+    height: 4rem;
+    display: block;
+    font-size: 1.2rem;
+    text-align: center;
+    background: #2255A4;
+    line-height: 4rem;
+}
+
+.button-wrapper {
+    margin: 0.5rem;
+}
+
+    .button:hover {
+        background: #193f7a
+    }
