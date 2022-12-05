@@ -24,7 +24,8 @@ namespace Home.WebApi.Controllers
             return new()
             {
                 Energy = _energyService.GetEnergyData(from, to),
-                EnergyPrevious = _energyService.GetEnergyData(from.AddDays(-((to - from).Days + 1)), from.AddDays(-1))
+                EnergyPrevious = _energyService.GetEnergyData(from.AddDays(-((to - from).Days + 1)), from.AddDays(-1)),
+                ChartData = _energyService.GetChartData(from, to),
             };
         }
 

@@ -8,5 +8,6 @@ namespace Home.WebApi.Interfaces
         EnergyDto GetEnergyData(DateTimeOffset fromDate, DateTimeOffset toDate);
         Task<PowerDto> CurrentPower();
         double GetMaxEnergyStore();
+        ElectricityChartDataDto GetChartData(DateTimeOffset from, DateTimeOffset to);
     }
 }

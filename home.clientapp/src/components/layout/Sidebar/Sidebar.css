@@ -6,6 +6,7 @@
     height: 100%;
     padding-top:4rem;
     display:block;
+    z-index:4;
 }
 
 @media(min-width: 72rem) {

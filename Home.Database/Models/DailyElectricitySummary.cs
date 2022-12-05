@@ -72,16 +72,16 @@ namespace Home.WebApi.Database.Models
         public int MaxPowerStore { get; set; } = 0;
 
         [NotMapped]
-        public double EnergyConsumption => EnergyUse + EnergyImportDaily;
+        public double EnergyConsumptionDaily => EnergyUseDaily + EnergyImportDaily;
 
         [NotMapped]
-        public double EnergyUse => EnergyProductionAll - EnergyExportDaily;
+        public double EnergyUseDaily => EnergyProductionDailyAll - EnergyExportDaily;
 
         [NotMapped]
-        public double EnergyStore => EnergyExportDaily * HomeConfig.Default.EnergyReturnFactor - EnergyImportDaily;
+        public double EnergyStoreDaily => EnergyExportDaily * HomeConfig.Default.EnergyReturnFactor - EnergyImportDaily;
 
         [NotMapped]
-        public double EnergyProductionAll => EnergyProductionDaily + EnergyProductionDeyeDaily;
+        public double EnergyProductionDailyAll => EnergyProductionDaily + EnergyProductionDeyeDaily;
 
 
         [NotMapped]
