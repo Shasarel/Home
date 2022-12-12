@@ -12,6 +12,8 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\build</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="src\components\pages\Meteo\" />
     <Folder Include="src\components\shared\Button\" />
+    <Folder Include="src\components\shared\NavigateToHistory\" />
   </ItemGroup>
 </Project>

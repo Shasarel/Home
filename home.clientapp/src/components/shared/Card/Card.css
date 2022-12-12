@@ -59,3 +59,73 @@ div.card-bottom-progressbar {
         box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
         overflow: hidden;
     }
+
+.card-bottom-arrow-left {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 1.3rem;
+}
+.card-bottom-arrow-right {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    padding-left: 0.5rem;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+.card-bottom-arrow-right-green {
+    color: forestgreen;
+}
+
+.card-bottom-arrow-right-red {
+    color:  orangered;
+}
+
+.card-bottom-arrow-right-yellow {
+    color: sandybrown
+}
+
+.card-bottom-dust {
+    width: 100%;
+    height: 100%;
+    color: black;
+    font-size: 1rem;
+    box-sizing: border-box;
+    display:flex;
+}
+.card-bottom-dust-left {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    padding-right: 0.5rem;
+}
+
+.card-bottom-dust-right {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    box-sizing: border-box;
+}
+.card-bottom-dust-status {
+    height: 75%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #70CA2C;
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    font-weight: bold;
+}

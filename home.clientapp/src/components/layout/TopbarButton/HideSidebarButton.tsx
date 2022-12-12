@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import { Icon } from '../Icon/Icon';
 import './TopbarButton.css'
 
