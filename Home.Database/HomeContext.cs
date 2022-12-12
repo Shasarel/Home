@@ -2,6 +2,7 @@
 using Home.WebApi.Database.Models;
 using Home.WebApi.Database.ValueConverters;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace Home.WebApi.Database
 {
@@ -14,13 +15,15 @@ namespace Home.WebApi.Database
         public DbSet<ElectricityMeasurement> ElectricityMeasurement { get; set; }
         public DbSet<EnergyCorrection> EnergyCorrection { get; set; }
         public DbSet<MeteoMeasurement> MeteoMeasurement { get; set; }
-        public HomeContext(DbContextOptions<HomeContext> options) : base(options)
+        public HomeContext() : base()
         {
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(HomeConfig.Default.DatabasePath);
+            optionsBuilder.LogTo(message => Console.WriteLine(message));
+            optionsBuilder.EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

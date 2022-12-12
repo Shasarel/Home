@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Home.MeasurementFetcher.Dtos
 {
-    internal class IoTChiefMeteoResponseDto : IIoTChiefResponseDataDto<MeteoMeasurement>
+    public sealed class IoTChiefMeteoResponseDto : IIoTChiefResponseDataDto<MeteoMeasurement>
     {
         [JsonPropertyName("meteo_data")]
         public MeteoDataDto? MeteoData { get; set; }

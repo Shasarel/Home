@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Home.WebApi.Database.Models
 {
+    [Table("meteo")]
     public class MeteoMeasurement
     {
         [Key]
@@ -16,6 +17,10 @@ namespace Home.WebApi.Database.Models
         [Required]
         [Column("temperature")]
         public double Temperature { get; set; } = 0;
+
+        [Required]
+        [Column("humidity")]
+        public double Humidity { get; set; } = 0;
 
         [Required]
         [Column("pressure")]
