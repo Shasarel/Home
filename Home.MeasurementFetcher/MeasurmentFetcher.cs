@@ -19,7 +19,6 @@ namespace Home.MeasurementFetcher
             await GetMeasurement<ElectricityMeasurement, IotChiefEnergyResponseDto>(HomeConfig.Default.IoTChiefUrl);
 
         public static async Task<MeteoMeasurement> GetMeteoMeasurement() =>
-            
             await GetMeasurement<MeteoMeasurement, IoTChiefMeteoResponseDto>(HomeConfig.Default.MeteoUrl);
 
         internal static async Task<TEntity> GetMeasurement<TEntity, TDto>(string? requestUri) 

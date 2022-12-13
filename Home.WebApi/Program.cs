@@ -10,10 +10,12 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<HomeContext>();
 
 builder.Services.AddTransient<IEnergyService, EnergyService>();
+builder.Services.AddTransient<IMeteoService, MeteoService>();
 
 var app = builder.Build();
 
-//app.UseStaticFiles();
+app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
 
 app.MapControllers();
 

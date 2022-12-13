@@ -8,15 +8,12 @@ namespace Home.WebApi.Controllers
     [Route("api/[controller]/[action]")]
     public class MeteoController : ControllerBase
     {
-        private readonly ILogger<EnergyController> _logger;
         private readonly IMeteoService _meteoService;
 
         public MeteoController(ILogger<EnergyController> logger, IMeteoService meteoService)
         {
-            _logger = logger;
             _meteoService = meteoService;
         }
-
 
         public async Task<MeteoDto> Now()
         {

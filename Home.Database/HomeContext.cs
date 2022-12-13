@@ -22,8 +22,6 @@ namespace Home.WebApi.Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(HomeConfig.Default.DatabasePath);
-            optionsBuilder.LogTo(message => Console.WriteLine(message));
-            optionsBuilder.EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -80,7 +80,7 @@ namespace Home.WebApi.Services
                 },
                 Dust = new()
                 {
-                    Max  = groups.SelectMax(x => x.DustPM25),
+                    Max = groups.SelectMax(x => x.DustPM25),
                     Min = groups.SelectMin(x => x.DustPM25),
                     Avg = groups.SelectAvg(x => x.DustPM25),
                 },

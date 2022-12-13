@@ -5,7 +5,7 @@ namespace Home.Configuration
     public static class HomeConfig
     {
         private static readonly string _configFilePathEnv = "HOME_WEB_CONFIG";
-        private static readonly string _defaultConfigFilePath = "appsettings.json";
+        private static readonly string _defaultConfigFilePath = "appsettingsDev.json";
 
         private static Config? _configurationData;
         public static Config Default
