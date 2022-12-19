@@ -1,4 +1,4 @@
-﻿using Home.WebApi.Database.Models;
+﻿using Home.Database.Models;
 using System.Text.Json.Serialization;
 
 namespace Home.MeasurementFetcher.Dtos

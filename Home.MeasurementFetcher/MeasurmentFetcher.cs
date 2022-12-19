@@ -1,6 +1,6 @@
 ﻿using Home.Configuration;
+using Home.Database.Models;
 using Home.MeasurementFetcher.Dtos;
-using Home.WebApi.Database.Models;
 using System.Net.Http.Json;
 
 namespace Home.MeasurementFetcher

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Home.WebApi.Database.Models
+namespace Home.Database.Models
 {
     [Table("meteo_daily")]
     public class DailyMeteoSummary

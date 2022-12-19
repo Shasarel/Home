@@ -1,3 +1,4 @@
+import { Blinds } from "./components/pages/Blinds/Blinds";
 import { Energy } from "./components/pages/Energy/Energy";
 import { EnergyHistory } from "./components/pages/Energy/EnergyHistory";
 import { Home } from "./components/pages/Home";
@@ -28,7 +29,7 @@ const AppRoutes=
         index: false,
         path: "/blinds",
         title: "Rolety",
-        element: <Energy />
+        element: <Blinds />
     },
     Meteo: {
         index: false,

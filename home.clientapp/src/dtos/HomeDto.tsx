@@ -1,4 +1,4 @@
-import { EnergyDto } from "./EnergyDto";
+import { EnergyDto } from "./Energy/EnergyDto";
 
 export interface HomeDto {
     energyToday: EnergyDto;

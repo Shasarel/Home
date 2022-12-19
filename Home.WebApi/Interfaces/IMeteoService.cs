@@ -1,4 +1,4 @@
-﻿using Home.WebApi.Dtos;
+﻿using Home.WebApi.Dtos.Meteo;
 
 namespace Home.WebApi.Interfaces
 {

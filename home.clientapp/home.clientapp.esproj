@@ -13,7 +13,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\components\pages\Meteo\" />
+    <Folder Include="src\components\pages\Blinds\" />
     <Folder Include="src\components\shared\Button\" />
     <Folder Include="src\components\shared\NavigateToHistory\" />
+    <Folder Include="src\components\shared\ComboBox\" />
+    <Folder Include="src\components\shared\Table\" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,9 @@
+.comboBox{
+    width: 24rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.comboBoxHiddenOption{
+    display: none;
+}

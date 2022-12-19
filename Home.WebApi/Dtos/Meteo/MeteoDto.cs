@@ -1,4 +1,4 @@
-﻿namespace Home.WebApi.Dtos
+﻿namespace Home.WebApi.Dtos.Meteo
 {
     public class MeteoDto
     {

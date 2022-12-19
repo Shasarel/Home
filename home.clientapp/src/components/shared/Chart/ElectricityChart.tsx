@@ -1,4 +1,4 @@
-import { ElectricityChartDataDto } from "../../../dtos/ElectricityChartDataDto";
+import { ElectricityChartDataDto } from "../../../dtos/Energy/ElectricityChartDataDto";
 import {
     Chart as ChartJS,
     CategoryScale,

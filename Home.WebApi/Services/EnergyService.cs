@@ -1,8 +1,8 @@
-﻿using Home.WebApi.Database;
-using Home.WebApi.Dtos;
-using Home.WebApi.Extensions;
+﻿using Home.WebApi.Extensions;
 using Home.WebApi.Interfaces;
 using Home.WebApi.Enums;
+using Home.WebApi.Dtos.Energy;
+using Home.Database.Database;
 
 namespace Home.WebApi.Services
 {

@@ -1,10 +1,9 @@
 ﻿using Home.Configuration;
-using Home.WebApi.Database.Models;
-using Home.WebApi.Database.ValueConverters;
+using Home.Database.Models;
+using Home.Database.ValueConverters;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 
-namespace Home.WebApi.Database
+namespace Home.Database.Database
 {
    public sealed class HomeContext : DbContext
     {
@@ -15,6 +14,7 @@ namespace Home.WebApi.Database
         public DbSet<ElectricityMeasurement> ElectricityMeasurement { get; set; }
         public DbSet<EnergyCorrection> EnergyCorrection { get; set; }
         public DbSet<MeteoMeasurement> MeteoMeasurement { get; set; }
+
         public HomeContext() : base()
         {
         }

@@ -64,7 +64,7 @@ div.card-bottom-progressbar {
     width: 60%;
     height: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     font-size: 1.3rem;
 }
@@ -72,7 +72,7 @@ div.card-bottom-progressbar {
     width: 40%;
     height: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding-left: 0.5rem;
     align-items: center;
     box-sizing: border-box;
@@ -96,13 +96,13 @@ div.card-bottom-progressbar {
     color: black;
     font-size: 1rem;
     box-sizing: border-box;
-    display:flex;
+    display: flex;
 }
 .card-bottom-dust-left {
     width: 35%;
     height: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     font-size: 1.3rem;
     box-sizing: border-box;
@@ -113,7 +113,7 @@ div.card-bottom-progressbar {
     width: 65%;
     height: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
 }

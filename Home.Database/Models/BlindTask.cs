@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Home.Database.Enums.Blinds;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Home.WebApi.Enums.Blinds;
-using Action = Home.WebApi.Enums.Blinds.Action;
-using TaskStatus = Home.WebApi.Enums.Blinds.TaskStatus;
+using Action = Home.Database.Enums.Blinds.Action;
+using TaskStatus = Home.Database.Enums.Blinds.TaskStatus;
 
-namespace Home.WebApi.Database.Models
+namespace Home.Database.Models
 {
     [Table("blinds_task")]
     public class BlindTask
@@ -26,10 +26,10 @@ namespace Home.WebApi.Database.Models
         public Action Action { get; set; }
 
         [Column("user_id")] 
-        public int User { get; set; }
+        public int? User { get; set; }
 
         [Column("schedule_id")]
-        public int BlindsSchedule { get; set; }
+        public int? BlindsSchedule { get; set; }
 
         [Required]
         [Column("timeout")]

@@ -1,4 +1,6 @@
-﻿namespace Home.WebApi.Dtos
+﻿using Home.WebApi.Dtos.Energy;
+
+namespace Home.WebApi.Dtos
 {
     public class HomeDto
     {

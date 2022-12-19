@@ -11,6 +11,13 @@ export function post<TBody extends BodyInit, TResponse>(
     return request(url, {method: 'POST', body: body})
 }
 
+export function del<TResponse>(
+    url: string
+): Promise<TResponse> {
+    return request(url, { method: 'DELETE'})
+}
+
+
 function request<TResponse>(
     url: string,
     config: RequestInit = {}

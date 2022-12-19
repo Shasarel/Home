@@ -1,4 +1,4 @@
-﻿using Home.WebApi.Database.Models;
+﻿using Home.Database.Models;
 
 namespace Home.MeasurementFetcher
 {

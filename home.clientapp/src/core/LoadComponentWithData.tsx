@@ -3,11 +3,13 @@ import { get} from "./request";
 import { ErrorPage } from "../components/shared/ErrorPage/ErrorPage";
 import { Loader } from "../components/shared/Loader/Loader";
 
-
-export function LoadComponendWithData<TResponse>(
+type ComponentWithDataProps = {
     url: string,
-    componentCallback: (data: TResponse) => JSX.Element,
-    interval: number = -1) {
+    componentCallback: (data: any) => JSX.Element,
+    interval?: number
+}
+
+export function LoadComponendWithData<TResponse>({ url, componentCallback, interval }:ComponentWithDataProps) {
 
     const [data, setData] = useState<TResponse>();
     const [errorData, setErrorData] = useState<Error>();
@@ -15,8 +17,7 @@ export function LoadComponendWithData<TResponse>(
     useEffect(() => {
         GetAndLoadData(url, setData, setErrorData);
 
-        if (interval > 0)
-        {
+        if (interval !== undefined) {
             const inter = setInterval(() =>
                 GetAndLoadData(url, setData, setErrorData), interval);
 
@@ -42,6 +43,9 @@ function GetAndLoadData<TResponse>(
     setData: React.Dispatch<React.SetStateAction<TResponse | undefined>>,
     setErrorData: React.Dispatch<React.SetStateAction<Error | undefined>>
 ) {
+    setData(undefined);
+    setErrorData(undefined);
+
     get<TResponse>(url)
         .then(x => setData(x))
         .catch(error => setErrorData(error))

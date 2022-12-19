@@ -1,4 +1,4 @@
-﻿namespace Home.WebApi.Enums.Blinds
+﻿namespace Home.Database.Enums.Blinds
 {
     public enum Action
     {

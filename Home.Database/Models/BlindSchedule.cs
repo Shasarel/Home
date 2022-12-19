@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Home.Database.Enums.Blinds;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Home.WebApi.Enums.Blinds;
-using Action = Home.WebApi.Enums.Blinds.Action;
+using Action = Home.Database.Enums.Blinds.Action;
 
-namespace Home.WebApi.Database.Models
+namespace Home.Database.Models
 {
     [Table("blinds_schedule")]
     public class BlindSchedule

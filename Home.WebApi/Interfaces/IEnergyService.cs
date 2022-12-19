@@ -1,5 +1,5 @@
 ﻿using Home.WebApi.Controllers;
-using Home.WebApi.Dtos;
+using Home.WebApi.Dtos.Energy;
 
 namespace Home.WebApi.Interfaces
 {

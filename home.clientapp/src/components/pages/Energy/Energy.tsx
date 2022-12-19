@@ -1,5 +1,5 @@
 import { LoadComponendWithData } from '../../../core/LoadComponentWithData';
-import { EnergyDto } from '../../../dtos/EnergyDto';
+import { EnergyDto } from '../../../dtos/Energy/EnergyDto';
 import { CardBar } from '../../shared/Card/CardBar';
 import { Fieldset } from '../../shared/Fieldset/Fieldset';
 import AppRoutes from '../../../AppRoutes';
@@ -7,8 +7,8 @@ import { NavigateToHistory } from '../../shared/NavigateToHistory/NavigateToHist
 
 const maxPowerProduction = 8500;
 
-export function Energy() { 
-return LoadComponendWithData("api/energy/currentpower", ((data: EnergyDto) =>
+export function Energy() {
+    return <LoadComponendWithData url="api/energy/currentpower" componentCallback={((data: EnergyDto) =>
     (
         <div className="flex-column-center">
             <Fieldset title="Moc chwilowa">
@@ -21,5 +21,5 @@ return LoadComponendWithData("api/energy/currentpower", ((data: EnergyDto) =>
             </Fieldset>
             <NavigateToHistory path={AppRoutes.EnergyHistory.path} />
         </div>
-    )), 5000);
+    ))} interval={5000}/>;
 }

@@ -1,11 +1,7 @@
-﻿using Home.WebApi.Database;
-using Home.WebApi.Dtos;
-using Home.WebApi.Enums;
+﻿using Home.Database.Database;
+using Home.WebApi.Dtos.Meteo;
 using Home.WebApi.Extensions;
 using Home.WebApi.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Metrics;
-using System.Linq;
 
 namespace Home.WebApi.Services
 {

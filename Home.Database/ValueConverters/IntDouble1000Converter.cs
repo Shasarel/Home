@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Home.WebApi.Database.ValueConverters
+namespace Home.Database.ValueConverters
 {
     internal sealed class IntDouble1000Converter : ValueConverter<double, int>
     {

@@ -1,4 +1,4 @@
-using Home.WebApi.Dtos;
+using Home.WebApi.Dtos.Energy;
 using Home.WebApi.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

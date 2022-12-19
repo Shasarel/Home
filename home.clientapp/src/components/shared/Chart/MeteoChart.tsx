@@ -1,4 +1,4 @@
-﻿import {
+import {
     Chart as ChartJS,
     CategoryScale,
     LinearScale,
@@ -11,7 +11,7 @@
     BarElement,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { MinAvgMaxChartData } from '../../../dtos/MinAvgMaxChartDataDto';
+import { MinAvgMaxChartData } from '../../../dtos/Meteo/MinAvgMaxChartDataDto';
 import './Chart.css'
 
 ChartJS.register(
