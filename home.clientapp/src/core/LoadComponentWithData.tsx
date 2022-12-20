@@ -15,6 +15,8 @@ export function LoadComponendWithData<TResponse>({ url, componentCallback, inter
     const [errorData, setErrorData] = useState<Error>();
 
     useEffect(() => {
+        setData(undefined);
+        setErrorData(undefined);
         GetAndLoadData(url, setData, setErrorData);
 
         if (interval !== undefined) {
@@ -43,9 +45,6 @@ function GetAndLoadData<TResponse>(
     setData: React.Dispatch<React.SetStateAction<TResponse | undefined>>,
     setErrorData: React.Dispatch<React.SetStateAction<Error | undefined>>
 ) {
-    setData(undefined);
-    setErrorData(undefined);
-
     get<TResponse>(url)
         .then(x => setData(x))
         .catch(error => setErrorData(error))
