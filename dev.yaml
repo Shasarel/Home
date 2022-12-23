@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+    webapi:
+        build:
+            dockerfile: WebApi.Dockerfile
+        image: webapi
+        volumes:
+            - db:/db
+        env_file:
+            - WebApi.env
+    
+    clientapp:
+        build: 
+            dockerfile: clientapp.Dockerfile
+        image: clientapp
+        ports:
+            - "80:80"
+        
+volumes:
+    db:

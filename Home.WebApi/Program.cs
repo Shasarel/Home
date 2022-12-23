@@ -1,4 +1,4 @@
-using Home.WebApi.Database;
+using Home.Database.Database;
 using Home.WebApi.Interfaces;
 using Home.WebApi.Services;
 
@@ -11,11 +11,9 @@ builder.Services.AddDbContext<HomeContext>();
 
 builder.Services.AddTransient<IEnergyService, EnergyService>();
 builder.Services.AddTransient<IMeteoService, MeteoService>();
+builder.Services.AddTransient<IBlindsService, BlindsService>();
 
 var app = builder.Build();
-
-app.UseStaticFiles();
-app.MapFallbackToFile("index.html");
 
 app.MapControllers();
 
